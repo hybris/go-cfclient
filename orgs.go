@@ -24,6 +24,13 @@ type Org struct {
 	c    *Client
 }
 
+type OrgSummaryResponse struct {
+	Guid   string         `json:"guid"`
+	Name   string         `json:"name"`
+	Status string         `json:"status"`
+	Spaces []SpaceSummary `json:"spaces"`
+}
+
 func (c *Client) ListOrgs() ([]Org, error) {
 	var orgs []Org
 	var orgResp OrgResponse
@@ -73,5 +80,28 @@ func (c *Client) OrgSpaces(guid string) ([]Space, error) {
 	}
 
 	return spaces, nil
+
+}
+
+func (c *Client) OrgSummary(guid string) ([]SpaceSummary, error) {
+	var orgSummaryResponse OrgSummaryResponse
+
+	path := fmt.Sprintf("/v2/organizations/%s/summary", guid)
+	r := c.NewRequest("GET", path)
+	resp, err := c.DoRequest(r)
+	if err != nil {
+		return nil, fmt.Errorf("Error requesting space %v", err)
+	}
+	resBody, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Printf("Error reading space request %v", resBody)
+	}
+
+	err = json.Unmarshal(resBody, &orgSummaryResponse)
+	if err != nil {
+		return nil, fmt.Errorf("Error space organization summary %v", err)
+	}
+
+	return orgSummaryResponse.Spaces, nil
 
 }

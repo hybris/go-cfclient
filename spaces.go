@@ -26,6 +26,15 @@ type Space struct {
 	c       *Client
 }
 
+type SpaceSummary struct {
+	Guid         string `json:"guid"`
+	Name         string `json:"name"`
+	ServiceCount int    `json:"service_count"`
+	AppCount     int    `json:"app_count"`
+	MemDevTotal  int    `json:"mem_dev_total"`
+	MemProdTotal int    `json:"mem_prod_total"`
+}
+
 func (s *Space) Org() (Org, error) {
 	var orgResource OrgResource
 	r := s.c.NewRequest("GET", s.OrgURL)
