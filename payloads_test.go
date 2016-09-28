@@ -721,3 +721,54 @@ const listAppsCreatedEventPayload = `{
       }
     ]
  }`
+
+ const listUsersPayload = `{
+   "total_results": 4,
+   "total_pages": 1,
+   "prev_url": null,
+   "next_url": "/v2/users?order-direction=asc&page=2&results-per-page=50",
+   "resources": [
+      {
+         "metadata": {
+            "guid": "08582a96-cbef-463c-822e-bda8d4284cc7",
+            "url": "/v2/users/08582a96-cbef-463c-822e-bda8d4284cc7",
+            "created_at": "2016-08-04T21:57:38Z",
+            "updated_at": null
+         },
+         "entity": {
+            "admin": false,
+            "active": true,
+            "default_space_guid": null,
+            "username": "demo",
+            "spaces_url": "/v2/users/08582a96-cbef-463c-822e-bda8d4284cc7/spaces",
+            "organizations_url": "/v2/users/08582a96-cbef-463c-822e-bda8d4284cc7/organizations",
+            "managed_organizations_url": "/v2/users/08582a96-cbef-463c-822e-bda8d4284cc7/managed_organizations",
+            "billing_managed_organizations_url": "/v2/users/08582a96-cbef-463c-822e-bda8d4284cc7/billing_managed_organizations",
+            "audited_organizations_url": "/v2/users/08582a96-cbef-463c-822e-bda8d4284cc7/audited_organizations",
+            "managed_spaces_url": "/v2/users/08582a96-cbef-463c-822e-bda8d4284cc7/managed_spaces",
+            "audited_spaces_url": "/v2/users/08582a96-cbef-463c-822e-bda8d4284cc7/audited_spaces"
+         }
+      },
+      {
+         "metadata": {
+            "guid": "08582a96-cbef-464c-822e-bda8d4284cc7",
+            "url": "/v2/users/08582a96-cbef-464c-822e-bda8d4284cc7",
+            "created_at": "2016-08-04T21:57:38Z",
+            "updated_at": null
+         },
+         "entity": {
+            "admin": false,
+            "active": true,
+            "default_space_guid": null,
+            "username": "demo",
+            "spaces_url": "/v2/users/08582a96-cbef-464c-822e-bda8d4284cc7/spaces",
+            "organizations_url": "/v2/users/08582a96-cbef-464c-822e-bda8d4284cc7/organizations",
+            "managed_organizations_url": "/v2/users/08582a96-cbef-464c-822e-bda8d4284cc7/managed_organizations",
+            "billing_managed_organizations_url": "/v2/users/08582a96-cbef-464c-822e-bda8d4284cc7/billing_managed_organizations",
+            "audited_organizations_url": "/v2/users/08582a96-cbef-464c-822e-bda8d4284cc7/audited_organizations",
+            "managed_spaces_url": "/v2/users/08582a96-cbef-464c-822e-bda8d4284cc7/managed_spaces",
+            "audited_spaces_url": "/v2/users/08582a96-cbef-464c-822e-bda8d4284cc7/audited_spaces"
+         }
+      }
+ ]
+ }`
