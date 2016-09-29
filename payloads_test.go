@@ -722,7 +722,7 @@ const listAppsCreatedEventPayload = `{
     ]
  }`
 
- const listUsersPayload = `{
+const listUsersPayload = `{
    "total_results": 4,
    "total_pages": 1,
    "prev_url": null,
@@ -772,3 +772,359 @@ const listAppsCreatedEventPayload = `{
       }
  ]
  }`
+
+const spaceUsersPayload = `{
+   "total_results": 1,
+   "total_pages": 1,
+   "prev_url": null,
+   "next_url": null,
+   "resources": [
+      {
+         "metadata": {
+            "guid": "138557be-69b8-4c71-8ba1-502bb2d0dd29",
+            "url": "/v2/users/138557be-69b8-4c71-8ba1-502bb2d0dd29",
+            "created_at": "2015-07-27T13:23:25Z",
+            "updated_at": null
+         },
+         "entity": {
+            "admin": false,
+            "active": false,
+            "default_space_guid": null,
+            "username": "user1",
+            "spaces_url": "/v2/users/138557be-69b8-4c71-8ba1-502bb2d0dd29/spaces",
+            "organizations_url": "/v2/users/138557be-69b8-4c71-8ba1-502bb2d0dd29/organizations",
+            "managed_organizations_url": "/v2/users/138557be-69b8-4c71-8ba1-502bb2d0dd29/managed_organizations",
+            "billing_managed_organizations_url": "/v2/users/138557be-69b8-4c71-8ba1-502bb2d0dd29/billing_managed_organizations",
+            "audited_organizations_url": "/v2/users/138557be-69b8-4c71-8ba1-502bb2d0dd29/audited_organizations",
+            "managed_spaces_url": "/v2/users/138557be-69b8-4c71-8ba1-502bb2d0dd29/managed_spaces",
+            "audited_spaces_url": "/v2/users/138557be-69b8-4c71-8ba1-502bb2d0dd29/audited_spaces"
+         }
+      }
+   ]
+}`
+
+const createSpacePayload = `{
+  "metadata": {
+    "guid": "2a01cf80-9fbf-448f-a7a0-1e415e28771e",
+    "url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e",
+    "created_at": "2016-06-08T16:41:40Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "development",
+    "organization_guid": "28960823-1b68-4a2b-8f36-77cc573bccca",
+    "space_quota_definition_guid": null,
+    "allow_ssh": true,
+    "organization_url": "/v2/organizations/28960823-1b68-4a2b-8f36-77cc573bccca",
+    "developers_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/developers",
+    "managers_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/managers",
+    "auditors_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/auditors",
+    "apps_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/apps",
+    "routes_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/routes",
+    "domains_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/domains",
+    "service_instances_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/service_instances",
+    "app_events_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/app_events",
+    "events_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/events",
+    "security_groups_url": "/v2/spaces/2a01cf80-9fbf-448f-a7a0-1e415e28771e/security_groups"
+  }
+}`
+
+const spaceQuotaPayload = `{
+  "metadata": {
+    "guid": "a9097bc8-c6cf-4a8f-bc47-623fa22e8019",
+    "url": "/v2/space_quota_definitions/a9097bc8-c6cf-4a8f-bc47-623fa22e8019",
+    "created_at": "2016-06-08T16:41:29Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "name-1491",
+    "organization_guid": "a065dfc7-3aed-4438-a6af-b1f42d9a4ed4",
+    "non_basic_services_allowed": true,
+    "total_services": 60,
+    "total_routes": 1000,
+    "memory_limit": 20480,
+    "instance_memory_limit": -1,
+    "app_instance_limit": -1,
+    "app_task_limit": 5,
+    "total_service_keys": 600,
+    "total_reserved_route_ports": -1,
+    "organization_url": "/v2/organizations/a065dfc7-3aed-4438-a6af-b1f42d9a4ed4",
+    "spaces_url": "/v2/space_quota_definitions/a9097bc8-c6cf-4a8f-bc47-623fa22e8019/spaces"
+  }
+}`
+
+const setSpaceUserRolePayload = `{
+  "metadata": {
+    "guid": "41cf9a95-7d8c-4af8-8b29-af39ba825419",
+    "url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419",
+    "created_at": "2016-06-08T16:41:42Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "name-2142",
+    "organization_guid": "f88230a1-913c-417e-b0e2-d2a59bf0fa7d",
+    "space_quota_definition_guid": null,
+    "allow_ssh": true,
+    "organization_url": "/v2/organizations/f88230a1-913c-417e-b0e2-d2a59bf0fa7d",
+    "developers_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/developers",
+    "managers_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/managers",
+    "auditors_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/auditors",
+    "apps_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/apps",
+    "routes_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/routes",
+    "domains_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/domains",
+    "service_instances_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/service_instances",
+    "app_events_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/app_events",
+    "events_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/events",
+    "security_groups_url": "/v2/spaces/41cf9a95-7d8c-4af8-8b29-af39ba825419/security_groups"
+  }
+}`
+
+const orgSummaryPayload = `{
+  "guid": "bbf58adc-60cf-4965-8aec-82ae7ddcd2f5",
+  "name": "name-1373",
+  "status": "active",
+  "spaces": [
+    {
+      "guid": "cf63a51f-9dcd-43f8-8552-a08a4a3b4df3",
+      "name": "name-1375",
+      "service_count": 0,
+      "app_count": 0,
+      "mem_dev_total": 0,
+      "mem_prod_total": 0
+    }
+  ]
+}`
+
+const orgQuotaPayload = `{
+  "metadata": {
+    "guid": "80f3e539-a8c0-4c43-9c72-649df53da8cb",
+    "url": "/v2/quota_definitions/80f3e539-a8c0-4c43-9c72-649df53da8cb",
+    "created_at": "2016-06-08T16:41:39Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "name-1996",
+    "non_basic_services_allowed": true,
+    "total_services": 60,
+    "total_routes": 1000,
+    "total_private_domains": -1,
+    "memory_limit": 20480,
+    "trial_db_allowed": false,
+    "instance_memory_limit": 1024,
+    "app_instance_limit": -1,
+    "app_task_limit": -1,
+    "total_service_keys": -1,
+    "total_reserved_route_ports": 5
+  }
+}`
+
+const orgCreatePayload = `{
+  "metadata": {
+    "guid": "22b3b0a0-6511-47e5-8f7a-93bbd2ff446e",
+    "url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e",
+    "created_at": "2016-06-08T16:41:33Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "my-org-name",
+    "billing_enabled": false,
+    "quota_definition_guid": "b7887f5c-34bb-40c5-9778-577572e4fb2d",
+    "status": "active",
+    "quota_definition_url": "/v2/quota_definitions/b7887f5c-34bb-40c5-9778-577572e4fb2d",
+    "spaces_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/spaces",
+    "domains_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/domains",
+    "private_domains_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/private_domains",
+    "users_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/users",
+    "managers_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/managers",
+    "billing_managers_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/billing_managers",
+    "auditors_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/auditors",
+    "app_events_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/app_events",
+    "space_quota_definitions_url": "/v2/organizations/22b3b0a0-6511-47e5-8f7a-93bbd2ff446e/space_quota_definitions"
+  }
+}`
+
+const orgUserRolePayload = `{
+  "metadata": {
+    "guid": "272b3566-04bd-4f3a-b83d-75deb8a67649",
+    "url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649",
+    "created_at": "2016-06-08T16:41:34Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "name-1766",
+    "billing_enabled": false,
+    "quota_definition_guid": "1d25566a-b327-4bab-b179-e7f49c96512b",
+    "status": "active",
+    "quota_definition_url": "/v2/quota_definitions/1d25566a-b327-4bab-b179-e7f49c96512b",
+    "spaces_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/spaces",
+    "domains_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/domains",
+    "private_domains_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/private_domains",
+    "users_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/users",
+    "managers_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/managers",
+    "billing_managers_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/billing_managers",
+    "auditors_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/auditors",
+    "app_events_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/app_events",
+    "space_quota_definitions_url": "/v2/organizations/272b3566-04bd-4f3a-b83d-75deb8a67649/space_quota_definitions"
+  }
+}`
+
+const orgUserPayload = `{
+  "metadata": {
+    "guid": "6f0e3308-1340-4682-937e-7b8186f5431e",
+    "url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e",
+    "created_at": "2016-06-08T16:41:35Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "name-1766",
+    "billing_enabled": false,
+    "quota_definition_guid": "566e09b9-2b73-4506-be69-97b1cdca0f1c",
+    "status": "active",
+    "quota_definition_url": "/v2/quota_definitions/566e09b9-2b73-4506-be69-97b1cdca0f1c",
+    "spaces_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/spaces",
+    "domains_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/domains",
+    "private_domains_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/private_domains",
+    "users_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/users",
+    "managers_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/managers",
+    "billing_managers_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/billing_managers",
+    "auditors_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/auditors",
+    "app_events_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/app_events",
+    "space_quota_definitions_url": "/v2/organizations/6f0e3308-1340-4682-937e-7b8186f5431e/space_quota_definitions"
+  }
+}`
+
+const orgQuotasDefinitionsPayload = `{
+  "total_results": 1,
+  "total_pages": 1,
+  "prev_url": null,
+  "next_url": null,
+  "resources": [
+    {
+      "metadata": {
+        "guid": "095a6b8c-31a7-4bc0-a11c-c6a829cfd74c",
+        "url": "/v2/quota_definitions/095a6b8c-31a7-4bc0-a11c-c6a829cfd74c",
+        "created_at": "2016-06-08T16:41:39Z",
+        "updated_at": null
+      },
+      "entity": {
+        "name": "default",
+        "non_basic_services_allowed": true,
+        "total_services": 100,
+        "total_routes": 1000,
+        "total_private_domains": -1,
+        "memory_limit": 10240,
+        "trial_db_allowed": false,
+        "instance_memory_limit": -1,
+        "app_instance_limit": -1,
+        "app_task_limit": -1,
+        "total_service_keys": -1,
+        "total_reserved_route_ports": 0
+      }
+    }
+  ]
+}`
+
+const orgSetQuotaPayload = `{
+  "metadata": {
+    "guid": "0f345184-4fd5-4728-8cda-d5ad7f183e9f",
+    "url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f",
+    "created_at": "2016-06-08T16:41:33Z",
+    "updated_at": "2016-06-08T16:41:33Z"
+  },
+  "entity": {
+    "name": "New Organization Name",
+    "billing_enabled": false,
+    "quota_definition_guid": "55b3bbcb-e075-4fc3-904d-733feb8964dc",
+    "status": "active",
+    "quota_definition_url": "/v2/quota_definitions/55b3bbcb-e075-4fc3-904d-733feb8964dc",
+    "spaces_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/spaces",
+    "domains_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/domains",
+    "private_domains_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/private_domains",
+    "users_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/users",
+    "managers_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/managers",
+    "billing_managers_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/billing_managers",
+    "auditors_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/auditors",
+    "app_events_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/app_events",
+    "space_quota_definitions_url": "/v2/organizations/0f345184-4fd5-4728-8cda-d5ad7f183e9f/space_quota_definitions"
+  }
+}`
+
+const spaceQuotasDefinitionsPayload = `{
+  "total_results": 1,
+  "total_pages": 1,
+  "prev_url": null,
+  "next_url": null,
+  "resources": [
+    {
+      "metadata": {
+        "guid": "2203db56-bf87-4ffe-91b9-d46c810fb1b5",
+        "url": "/v2/space_quota_definitions/2203db56-bf87-4ffe-91b9-d46c810fb1b5",
+        "created_at": "2016-06-08T16:41:34Z",
+        "updated_at": null
+      },
+      "entity": {
+        "name": "name-1759",
+        "organization_guid": "9d3a1be7-d504-42bc-987d-90298dcb6b69",
+        "non_basic_services_allowed": true,
+        "total_services": 60,
+        "total_routes": 1000,
+        "memory_limit": 20480,
+        "instance_memory_limit": -1,
+        "app_instance_limit": -1,
+        "app_task_limit": 5,
+        "total_service_keys": 600,
+        "total_reserved_route_ports": -1,
+        "organization_url": "/v2/organizations/9d3a1be7-d504-42bc-987d-90298dcb6b69",
+        "spaces_url": "/v2/space_quota_definitions/2203db56-bf87-4ffe-91b9-d46c810fb1b5/spaces"
+      }
+    }
+  ]
+}`
+
+const spaceSetQuotaPayload = `{
+  "metadata": {
+    "guid": "b8d91aeb-1967-495b-a287-8814ce7bbed0",
+    "url": "/v2/space_quota_definitions/b8d91aeb-1967-495b-a287-8814ce7bbed0",
+    "created_at": "2016-06-08T16:41:29Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "name-1475",
+    "organization_guid": "359e824f-34b3-4be2-9e68-3aaafc20b0a0",
+    "non_basic_services_allowed": true,
+    "total_services": 60,
+    "total_routes": 1000,
+    "memory_limit": 20480,
+    "instance_memory_limit": -1,
+    "app_instance_limit": -1,
+    "app_task_limit": 5,
+    "total_service_keys": 600,
+    "total_reserved_route_ports": -1,
+    "organization_url": "/v2/organizations/359e824f-34b3-4be2-9e68-3aaafc20b0a0",
+    "spaces_url": "/v2/space_quota_definitions/b8d91aeb-1967-495b-a287-8814ce7bbed0/spaces"
+  }
+}`
+
+const spaceCreateQuotaPayload = `{
+  "metadata": {
+    "guid": "17f055b8-b4c8-47cf-8737-0220d5706b4a",
+    "url": "/v2/space_quota_definitions/17f055b8-b4c8-47cf-8737-0220d5706b4a",
+    "created_at": "2016-06-08T16:41:29Z",
+    "updated_at": null
+  },
+  "entity": {
+    "name": "gold_quota",
+    "organization_guid": "c9b4ac17-ab4b-4368-b3e2-5cbf09b17a24",
+    "non_basic_services_allowed": true,
+    "total_services": -1,
+    "total_routes": 10,
+    "memory_limit": 5120,
+    "instance_memory_limit": -1,
+    "app_instance_limit": -1,
+    "app_task_limit": 5,
+    "total_service_keys": -1,
+    "total_reserved_route_ports": 5,
+    "organization_url": "/v2/organizations/c9b4ac17-ab4b-4368-b3e2-5cbf09b17a24",
+    "spaces_url": "/v2/space_quota_definitions/17f055b8-b4c8-47cf-8737-0220d5706b4a/spaces"
+  }
+}`
