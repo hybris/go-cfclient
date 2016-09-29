@@ -44,6 +44,10 @@ func setupMultiple(mockEndpoints []MockRoute) {
 			r.Post(endpoint, func() string {
 				return output
 			})
+		} else if method == "PUT" {
+			r.Put(endpoint, func() string {
+				return output
+			})
 		} else if method == "DELETE" {
 			r.Delete(endpoint, func() (int, string) {
 				return 204, output

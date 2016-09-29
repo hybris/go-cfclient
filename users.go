@@ -8,31 +8,31 @@ import (
 )
 
 type UserResponse struct {
-	Count     int           `json:"total_results"`
-	Pages     int           `json:"total_pages"`
+	Count     int            `json:"total_results"`
+	Pages     int            `json:"total_pages"`
 	Resources []UserResource `json:"resources"`
 }
 
 type UserResource struct {
 	Meta   Meta `json:"metadata"`
-	Entity User  `json:"entity"`
+	Entity User `json:"entity"`
 }
 
 type User struct {
-	Guid string `json:"guid"`
-	Username string `json:"username"`
-	SpaceUrl string `json:"spaces_url"`
+	Guid            string `json:"guid"`
+	Username        string `json:"username"`
+	SpaceUrl        string `json:"spaces_url"`
 	OrganizationUrl string `json:"organizations_url"`
-	Admin bool `json:"admin"`
-	Active bool `json:"active"`
-	CreatedAt string `json:"created_at"`
-	c    *Client
+	Admin           bool   `json:"admin"`
+	Active          bool   `json:"active"`
+	CreatedAt       string `json:"created_at"`
+	c               *Client
 }
 
 type UserSummaryResponse struct {
-	Guid   string         `json:"guid"`
-	Username   string     `json:"username"`
-	Active string         `json:"active"`
+	Guid     string `json:"guid"`
+	Username string `json:"username"`
+	Active   string `json:"active"`
 }
 
 func (c *Client) ListUsers() ([]User, error) {
